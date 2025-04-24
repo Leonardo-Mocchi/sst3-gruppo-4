@@ -34,3 +34,23 @@ header {
     font-weight: bold;
   } */
 }
+
+/* Override Bootstrap's blue background */
+.accordion-button:not(.collapsed) {
+  background-color: #f8f9fa;
+  /* Light gray background */
+  color: #212529;
+  /* Dark text color */
+  border-color: #dee2e6;
+  /* Light border color */
+}
+
+/* More specific selector */
+div.accordion .accordion-button:not(.collapsed) {
+  background-color: #f8f9fa;
+  /* Light gray background */
+  color: #212529;
+  /* Dark text color */
+  border-color: #dee2e6;
+  /* Light border color */
+}

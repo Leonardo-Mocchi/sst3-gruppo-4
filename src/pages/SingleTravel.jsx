@@ -7,13 +7,18 @@ export default function SingleTravel() {
 
   const travel = travels.find((travel) => travel.id === Number(id));
 
-  const [searchTerm, setSearchTerm] = useState("");
+  const [searchTerm, setSearchTerm] = useState(""); // Input value
+  const [filteredParticipants, setFilteredParticipants] = useState(travel.partecipants); // Filtered participants
 
-  const filteredParticipants = travel.partecipants.filter((partecipant) =>
-    `${partecipant.name} ${partecipant.surname}`
-      .toLowerCase()
-      .includes(searchTerm.toLowerCase())
-  );
+  // Function to handle search on button click
+  const handleSearch = () => {
+    const filtered = travel.partecipants.filter((partecipant) =>
+      `${partecipant.name} ${partecipant.surname}`
+        .toLowerCase()
+        .includes(searchTerm.toLowerCase())
+    );
+    setFilteredParticipants(filtered);
+  };
 
   return (
     <>
@@ -43,11 +48,15 @@ export default function SingleTravel() {
         <div className="mb-3">
           <input
             type="text"
-            className="form-control"
+            className="form-control me-2"
             placeholder="Cerca partecipante..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
           />
+          <button className="btn btn-primary" onClick={handleSearch}>
+            Cerca
+          </button>
+
         </div>
 
         <div className="accordion" id="accordionPanelsStayOpenExample">
