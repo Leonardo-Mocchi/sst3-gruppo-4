@@ -1,12 +1,11 @@
 import { useState } from 'react'
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
 import travels from "../data/db_travels";
 
 export default function SingleTravel() {
   const { id } = useParams();
-
   const travel = travels.find((travel) => travel.id === Number(id));
-
   const [searchTerm, setSearchTerm] = useState(""); // Input value
   const [filteredParticipants, setFilteredParticipants] = useState(travel.partecipants); // Filtered participants
 
@@ -23,15 +22,21 @@ export default function SingleTravel() {
   return (
     <>
       <div className="container">
+
+        <Link to={"/"} className='text-decoration-none text-dark '>
+          <button className='btn btn-outline-dark mt-4'> <i class="bi bi-arrow-left"> </i> Torna alla Pagina Principale </button>
+        </Link>
+
         <div className="row d-flex py-4">
           <div className="col-12 col-md-8">
             <h2>Dettagli viaggio</h2>
             <div className="card p-3">
               <div className="card-top">
-                <h4>{travel.destination}</h4>
+                <h1>{travel.destination}</h1>
                 <div className="card-body p-0">
-                  <p>Dal {new Date(travel.start_trip).toLocaleDateString()}</p>
-                  <p>Al {new Date(travel.start_trip).toLocaleDateString()}</p>
+                  <p>
+                    Dal <strong>{new Date(travel.start_trip).toLocaleDateString()} </strong> al <strong>{new Date(travel.start_trip).toLocaleDateString()}</strong>
+                  </p>
                 </div>
               </div>
             </div>
