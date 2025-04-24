@@ -6,7 +6,7 @@ export default function HomePage() {
         <main className="container mt-4">
             <h1>Bentornato!</h1>
 
-            <div className="my-3">
+            <div className="mt-2 mb-4">
                 <h3 className="mb-3">I nostri viaggi in corso</h3>
 
                 <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
