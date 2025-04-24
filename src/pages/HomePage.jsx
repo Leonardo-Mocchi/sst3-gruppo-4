@@ -1,4 +1,5 @@
-import Travels from "../data/db_travels"
+import travels from "../data/db_travels"
+import { Link } from "react-router-dom";
 
 export default function HomePage() {
     return (
@@ -9,8 +10,9 @@ export default function HomePage() {
                 <h3>I nostri viaggi in corso</h3>
 
                 <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
-                    {Travels.map((travel) => (
+                    {travels.map((travel) => (
                         <div className="col" key={travel.id}>
+                          <Link to={`/${travel.id}`} className="text-decoration-none text-dark">
                             <div className="card" >
                                 <img className="card-img-top" src="holder.js/100x180/" alt="Title" />
                                 <div className="card-body">
@@ -18,6 +20,7 @@ export default function HomePage() {
                                     <p className="card-text">Text</p>
                                 </div>
                             </div>
+                            </Link>
                         </div>
                     ))}
                 </div>
