@@ -71,7 +71,7 @@ export default function Footer() {
                 </div>
             </div>
             <div className="text-center p-2 footer-low py-3">
-                © 2025 Copyright
+                © {new Date().getFullYear()} BooRoad. All rights reserved.
             </div>
         </footer>
     );
