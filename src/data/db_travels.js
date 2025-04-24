@@ -248,7 +248,108 @@ const travels = [
         phone: "3344556677"
       }
     ]
+  },
+  {
+    id: 6,
+    destination: "Berlin",
+    start_trip: "2024-06-01",
+    end_trip: "2024-06-07",
+    note: "Explore museums",
+    image: "https://example.com/berlin.jpg",
+    partecipants: [
+      {
+        id: 26,
+        name: "Zara",
+        surname: "Miller",
+        fiscal_code: "MLLZRA12A90C525U",
+        email: "zara.miller@example.com",
+        phone: "4455667788"
+      },
+      {
+        id: 27,
+        name: "Aaron",
+        surname: "Carter",
+        fiscal_code: "CRTAAR13B95D626V",
+        email: "aaron.carter@example.com",
+        phone: "5566778899"
+      },
+      {
+        id: 28,
+        name: "Bella",
+        surname: "Turner",
+        fiscal_code: "TRNBLL14C00E727W",
+        email: "bella.turner@example.com",
+        phone: "6677889900"
+      },
+      {
+        id: 29,
+        name: "Chris",
+        surname: "Evans",
+        fiscal_code: "EVNCHR15D05F828X",
+        email: "chris.evans@example.com",
+        phone: "7788990011"
+      },
+      {
+        id: 30,
+        name: "Daisy",
+        surname: "Parker",
+        fiscal_code: "PRKDYS16E10G929Y",
+        email: "daisy.parker@example.com",
+        phone: "8899001122"
+      }
+    ]
+  },
+  {
+    id: 7,
+    destination: "Barcelona",
+    start_trip: "2024-07-15",
+    end_trip: "2024-07-20",
+    note: "Enjoy the architecture",
+    image: "https://example.com/barcelona.jpg",
+    partecipants: [
+      {
+        id: 31,
+        name: "Ethan",
+        surname: "Brooks",
+        fiscal_code: "BRKETH17F15H030Z",
+        email: "ethan.brooks@example.com",
+        phone: "9900112233"
+      },
+      {
+        id: 32,
+        name: "Fiona",
+        surname: "Reed",
+        fiscal_code: "REDFNA18G20I131A",
+        email: "fiona.reed@example.com",
+        phone: "0011223344"
+      },
+      {
+        id: 33,
+        name: "George",
+        surname: "Harris",
+        fiscal_code: "HRSGRG19H25J232B",
+        email: "george.harris@example.com",
+        phone: "1122334455"
+      },
+      {
+        id: 34,
+        name: "Holly",
+        surname: "Cooper",
+        fiscal_code: "CPRHLY20I30K333C",
+        email: "holly.cooper@example.com",
+        phone: "2233445566"
+      },
+      {
+        id: 35,
+        name: "Ian",
+        surname: "Morgan",
+        fiscal_code: "MRGIAN21J35L434D",
+        email: "ian.morgan@example.com",
+        phone: "3344556677"
+      }
+    ]
   }
-];
+]
+
 
 export default travels

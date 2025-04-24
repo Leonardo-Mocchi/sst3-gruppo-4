@@ -2,9 +2,8 @@ import Travels from "../data/db_travels"
 
 export default function HomePage() {
     return (
-        <main className="container">
-            <h1>Home Page</h1>
-            <p>Bentornato Accompagnatore!</p>
+        <main className="container mt-4">
+            <h1>Bentornato!</h1>
 
             <div className="my-4">
                 <h3>I nostri viaggi in corso</h3>
