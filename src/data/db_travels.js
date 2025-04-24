@@ -5,7 +5,7 @@ const travels = [
     start_trip: "2023-10-01",
     end_trip: "2023-10-05",
     note: null,
-    image: "https://example.com/paris.jpg",
+    image: "/imgs/parigi.jpg",
     partecipants: [
       { id: 1, name: "Alice", surname: "Smith", fiscal_code: "SMTALC01A01A001A", email: "alice.smith@example.com", phone: "1234567890" },
       { id: 2, name: "Bob", surname: "Johnson", fiscal_code: "JHNBOB02B02B002B", email: "bob.johnson@example.com", phone: "2345678901" },
@@ -30,7 +30,7 @@ const travels = [
     start_trip: "2023-11-10",
     end_trip: "2023-11-15",
     note: "Visit historical sites",
-    image: "https://example.com/rome.jpg",
+    image: "/imgs/roma.jpg",
     partecipants: [
       { id: 16, name: "Paul", surname: "Walker", fiscal_code: "WLKPL16P16P016P", email: "paul.walker@example.com", phone: "6789009876" },
       { id: 17, name: "Quinn", surname: "Evans", fiscal_code: "EVNQNN17Q17Q017Q", email: "quinn.evans@example.com", phone: "7890109876" },
@@ -56,7 +56,7 @@ const travels = [
     start_trip: "2024-01-05",
     end_trip: "2024-01-12",
     note: "Explore Japanese culture",
-    image: "https://example.com/tokyo.jpg",
+    image: "/imgs/tokyo.jpg",
     partecipants: [
       { id: 31, name: "Ella", surname: "Cook", fiscal_code: "CKKELL31E31E031E", email: "ella.cook@example.com", phone: "1234567893" },
       { id: 32, name: "Finn", surname: "Bell", fiscal_code: "BLLFNN32F32F032F", email: "finn.bell@example.com", phone: "2345678904" },
@@ -81,7 +81,7 @@ const travels = [
     start_trip: "2024-03-15",
     end_trip: "2024-03-20",
     note: "Attend a conference",
-    image: "https://example.com/newyork.jpg",
+    image: "/imgs/new-york.jpeg",
     partecipants: [
       { id: 46, name: "Ulysses", surname: "Hayes", fiscal_code: "HYSULS46U46U046U", email: "ulysses.hayes@example.com", phone: "6789012349" },
       { id: 47, name: "Vera", surname: "Jenkins", fiscal_code: "JNKVER47V47V047V", email: "vera.jenkins@example.com", phone: "7890123450" },
@@ -107,7 +107,7 @@ const travels = [
     start_trip: "2024-05-10",
     end_trip: "2024-05-18",
     note: "Enjoy the beaches",
-    image: "https://example.com/sydney.jpg",
+    image: "/imgs/sydney.jpg",
     partecipants: [
       { id: 61, name: "Jill", surname: "Xavier", fiscal_code: "XVRJLL61J61J061J", email: "jill.xavier@example.com", phone: "1234567896" },
       { id: 62, name: "Kyle", surname: "Young", fiscal_code: "YNGKYL62K62K062K", email: "kyle.young@example.com", phone: "2345678907" },
@@ -132,7 +132,7 @@ const travels = [
     start_trip: "2024-06-01",
     end_trip: "2024-06-07",
     note: "Explore museums",
-    image: "https://example.com/berlin.jpg",
+    image: "/imgs/berlino.jpg",
     partecipants: [
       { id: 76, name: "Yasmine", surname: "Ortiz", fiscal_code: "ORTYSM76Y76Y076Y", email: "yasmine.ortiz@example.com", phone: "6789012352" },
       { id: 77, name: "Zoe", surname: "Parker", fiscal_code: "PRKZOE77Z77Z077Z", email: "zoe.parker@example.com", phone: "7890123453" },
@@ -157,7 +157,7 @@ const travels = [
     start_trip: "2024-07-15",
     end_trip: "2024-07-20",
     note: "Enjoy the architecture",
-    image: "https://example.com/barcelona.jpg",
+    image: "/imgs/barcellona.jpg",
     partecipants: [
       { id: 91, name: "Nina", surname: "Dixon", fiscal_code: "DXNNIN91N91N091N", email: "nina.dixon@example.com", phone: "1234567899" },
       { id: 92, name: "Oscar", surname: "Ellis", fiscal_code: "ELLOSC92O92O092O", email: "oscar.ellis@example.com", phone: "2345678910" },
@@ -176,14 +176,13 @@ const travels = [
       { id: 105, name: "Ben", surname: "Stewart", fiscal_code: "STWBEN105B105B105B", email: "ben.stewart@example.com", phone: "5678901244" },
     ]
   },
-  // Add these to your `travels` array
   {
     id: 8,
     destination: "London",
     start_trip: "2024-08-10",
     end_trip: "2024-08-15",
     note: "Explore the city's landmarks",
-    image: "https://example.com/london.jpg",
+    image: "/imgs/londra.jpg",
     partecipants: [
       { id: 106, name: "Alice", surname: "Brown", fiscal_code: "BRNALC106A106A106A", email: "alice.brown@example.com", phone: "1234567890" },
       { id: 107, name: "Bob", surname: "Smith", fiscal_code: "SMTBBO107B107B107B", email: "bob.smith@example.com", phone: "2345678901" },
@@ -208,7 +207,7 @@ const travels = [
     start_trip: "2024-09-05",
     end_trip: "2024-09-12",
     note: "Experience luxury and culture",
-    image: "https://example.com/dubai.jpg",
+    image: "/imgs/dubai.jpg",
     partecipants: [
       { id: 121, name: "Paul", surname: "Walker", fiscal_code: "WLKPL121P121P121P", email: "paul.walker@example.com", phone: "6789009876" },
       { id: 122, name: "Quinn", surname: "Evans", fiscal_code: "EVNQNN122Q122Q122Q", email: "quinn.evans@example.com", phone: "7890109876" },
@@ -233,7 +232,7 @@ const travels = [
     start_trip: "2024-10-20",
     end_trip: "2024-10-30",
     note: "Discover nature and wildlife",
-    image: "https://example.com/capetown.jpg",
+    image: "/imgs/capetown.jpg",
     partecipants: [
       { id: 136, name: "Ella", surname: "Cook", fiscal_code: "CKKELL136E136E136E", email: "ella.cook@example.com", phone: "1234567893" },
       { id: 137, name: "Finn", surname: "Bell", fiscal_code: "BLLFNN137F137F137F", email: "finn.bell@example.com", phone: "2345678904" },
@@ -252,14 +251,13 @@ const travels = [
       { id: 150, name: "Tara", surname: "Griffin", fiscal_code: "GRFTAR150T150T150T", email: "tara.griffin@example.com", phone: "5678901238" }
     ]
   },
-  // Add these to your `travels` array
   {
     id: 11,
     destination: "Amsterdam",
     start_trip: "2024-11-15",
     end_trip: "2024-11-20",
     note: "Explore canals and museums",
-    image: "https://example.com/amsterdam.jpg",
+    image: "/imgs/amsterdam.jpeg",
     partecipants: [
       { id: 151, name: "Alice", surname: "Miller", fiscal_code: "MLRALC151A151A151A", email: "alice.miller@example.com", phone: "1234567890" },
       { id: 152, name: "Bob", surname: "Taylor", fiscal_code: "TYLBBO152B152B152B", email: "bob.taylor@example.com", phone: "2345678901" },
@@ -284,7 +282,7 @@ const travels = [
     start_trip: "2024-12-05",
     end_trip: "2024-12-10",
     note: "Visit the Christmas markets",
-    image: "https://example.com/prague.jpg",
+    image: "/imgs/praga.jpg",
     partecipants: [
       { id: 166, name: "Paul", surname: "Hill", fiscal_code: "HLLPL166P166P166P", email: "paul.hill@example.com", phone: "6789009876" },
       { id: 167, name: "Quinn", surname: "Evans", fiscal_code: "EVNQNN167Q167Q167Q", email: "quinn.evans@example.com", phone: "7890109876" },

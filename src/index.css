@@ -18,6 +18,29 @@ header {
   }
 }
 
+.container {
+
+  width: 70%;
+}
+
+.small-container {
+
+  width: 60%;
+}
+
+.card {
+
+  img {
+    width: 100%;
+    height: 15rem;
+    object-fit: cover;
+  }
+
+  .card-text {
+    font-size: 0.8rem;
+  }
+}
+
 .nav-link {
   text-decoration: none;
   padding: .5rem 1.5rem;
@@ -35,22 +58,21 @@ header {
   } */
 }
 
-/* Override Bootstrap's blue background */
-.accordion-button:not(.collapsed) {
-  background-color: #f8f9fa;
-  /* Light gray background */
+/* Selettore più specifico per l'accordion */
+div.accordion .accordion-button {
   color: #212529;
-  /* Dark text color */
+  /* Colore del testo */
+  background-color: #f8f9fa;
+  /* Colore di sfondo */
   border-color: #dee2e6;
-  /* Light border color */
+  /* Colore del bordo */
 }
 
-/* More specific selector */
-div.accordion .accordion-button:not(.collapsed) {
-  background-color: #f8f9fa;
-  /* Light gray background */
+div.accordion .accordion-button:visited {
   color: #212529;
-  /* Dark text color */
+  /* Mantiene il colore del testo */
+  background-color: #f8f9fa;
+  /* Mantiene il colore di sfondo */
   border-color: #dee2e6;
-  /* Light border color */
+  /* Mantiene il colore del bordo */
 }
