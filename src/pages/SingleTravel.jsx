@@ -27,7 +27,7 @@ export default function SingleTravel() {
     <>
       <div className="container">
 
-
+        {/*precedente posizione del bottone di ritorno*/}
 
         <div className="d-flex align-items-center my-4 justify-content-center">
           <img
@@ -114,10 +114,13 @@ export default function SingleTravel() {
               </div>
             </div>
           ))}
+
+          {/*bottone di ritorno*/}
           <div className="d-flex justify-content-center">
             <Link to={"/"} className='text-decoration-none text-dark'>
               <button className='btn btn-outline-dark mt-4'> <i className="bi bi-arrow-left"> </i> Torna alla Home </button>
             </Link>
+
           </div>
         </div>
       </div>

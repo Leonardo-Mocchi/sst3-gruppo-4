@@ -58,14 +58,11 @@ header {
   } */
 }
 
-/* Selettore più specifico per l'accordion */
+/* Colori dell'accordion */
 div.accordion .accordion-button {
   color: #212529;
-  /* Colore del testo */
   background-color: #f8f9fa;
-  /* Colore di sfondo */
   border-color: #dee2e6;
-  /* Colore del bordo */
 }
 
 div.accordion .accordion-button:visited {
@@ -80,4 +77,11 @@ div.accordion .accordion-button:visited {
 input:focus {
   box-shadow: none !important;
   border-color: #ffc107 !important;
+}
+
+.card:hover .card-img-top {
+  transition: transform 0.3s ease, filter 0.3s ease, opacity 0.3s ease;
+  filter: brightness(1.2);
+  opacity: 0.8;
+
 }
