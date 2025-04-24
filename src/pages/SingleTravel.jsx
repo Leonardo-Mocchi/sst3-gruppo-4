@@ -9,6 +9,10 @@ export default function SingleTravel() {
   const [searchTerm, setSearchTerm] = useState(""); // Input value
   const [filteredParticipants, setFilteredParticipants] = useState(travel.partecipants); // Filtered participants
 
+  /* !!!!!!!!!!!!!! 404 !!!!!!!!!!!!!!!!!!! */
+  const navigate = useNavigate()
+  /* !!!!!!!!!!!!!! 404 !!!!!!!!!!!!!!!!!!! */
+
   // Function to handle search on button click
   const handleSearch = () => {
     const filtered = travel.partecipants.filter((partecipant) =>
