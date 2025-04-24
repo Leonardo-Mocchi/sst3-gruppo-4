@@ -76,3 +76,8 @@ div.accordion .accordion-button:visited {
   border-color: #dee2e6;
   /* Mantiene il colore del bordo */
 }
+
+input:focus {
+  box-shadow: none !important;
+  border-color: #ffc107 !important;
+}
