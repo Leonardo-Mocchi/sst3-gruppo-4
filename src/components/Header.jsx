@@ -14,7 +14,7 @@ export default function Header() {
         <header className="bg-dark text-center py-2">
             {/* <div className="d-flex justify-content-between container"> */}
             <a className="navbar-brand" href="/">
-                <img src="/imgs/logoipsum-custom-logo.svg" alt="logo" height={75} />
+                <img src="/imgs/logoipsum-custom-logo.svg" alt="logo"/>
             </a>
 
             {/* {SiteMap.map((item) => (
