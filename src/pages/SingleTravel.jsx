@@ -7,8 +7,13 @@ export default function SingleTravel() {
 
   const travel = travels.find((travel) => travel.id === Number(id));
 
-  const [search, setSearch] = useState("");
+  const [searchTerm, setSearchTerm] = useState("");
 
+  const filteredParticipants = travel.partecipants.filter((partecipant) =>
+    `${partecipant.name} ${partecipant.surname}`
+      .toLowerCase()
+      .includes(searchTerm.toLowerCase())
+  );
 
   return (
     <>
@@ -33,58 +38,48 @@ export default function SingleTravel() {
 
         <hr />
 
-        <div className="container">
-          <div className="col-12">
 
-            <form>
-
-              <div className="mb-3">
-                <label htmlFor="new-post" className="form-label">Cerca</label>
-
-                <input
-                  type="text"
-                  className="form-control"
-                  name="new-post"
-                  id="new-post"
-                  placeholder="Cerca partecipante"
-                  value={search}
-                  onChange={(e) => setSearch(e.target.value)}
-
-                />
-              </div>
-
-            </form>
-
-          </div>
+        {/* Search Input */}
+        <div className="mb-3">
+          <input
+            type="text"
+            className="form-control"
+            placeholder="Cerca partecipante..."
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+          />
         </div>
 
-        <div className="accordion" id="accordionExample">
-
-          {travel.partecipants.map(partecipant => (
-            partecipant.name.toLowerCase().includes(search.toLowerCase()) || partecipant.surname.toLowerCase().includes(search.toLowerCase()) && (
-              <div className="accordion-item" key={partecipant.id}>
-                <h2 className="accordion-header">
-                  <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                    {partecipant.name} {partecipant.surname}
-                  </button>
-                </h2>
-                <div id="collapseOne" className="accordion-collapse collapse show" data-bs-parent="#accordionExample">
-                  <div className="accordion-body">
-
-                    <p className="card-text">Email: {partecipant.email}</p>
-                    <p className="card-text">Telefono: {partecipant.phone}</p>
-
-                  </div>
+        <div className="accordion" id="accordionPanelsStayOpenExample">
+          {filteredParticipants.map((partecipant) => (
+            <div className="accordion-item" key={partecipant.id}>
+              <h2 className="accordion-header">
+                <button
+                  className="accordion-button"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target={`#collapse${partecipant.id}`}
+                  aria-expanded="true"
+                  aria-controls={`collapse${partecipant.id}`}
+                >
+                  {partecipant.name} {partecipant.surname}
+                </button>
+              </h2>
+              <div
+                id={`collapse${partecipant.id}`}
+                className="accordion-collapse collapse"
+                data-bs-parent="#accordionExample"
+              >
+                <div className="accordion-body ">
+                  <p className="card-text">Email: {partecipant.email}</p>
+                  <p className="card-text">Telefono: {partecipant.phone}</p>
+                  <p className='card-text'>Codice Fiscale: {partecipant.fiscal_code}</p>
                 </div>
               </div>
-            ) 
-
-
-
+            </div>
           ))}
         </div>
       </div>
-
     </>
-  )
+  );
 }
