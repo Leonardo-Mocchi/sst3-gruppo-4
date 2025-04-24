@@ -61,7 +61,7 @@ export default function SingleTravel() {
         <div className="accordion" id="accordionExample">
 
           {travel.partecipants.map(partecipant => (
-            partecipant.name.includes(search) || partecipant.surname.includes(search) ? (
+            partecipant.name.toLowerCase().includes(search.toLowerCase()) || partecipant.surname.toLowerCase().includes(search.toLowerCase()) && (
               <div className="accordion-item" key={partecipant.id}>
                 <h2 className="accordion-header">
                   <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
@@ -77,9 +77,7 @@ export default function SingleTravel() {
                   </div>
                 </div>
               </div>
-            ) : (
-              <p>Nessun risultato corrisponde alla ricerca</p>
-            )
+            ) 
 
 
 
