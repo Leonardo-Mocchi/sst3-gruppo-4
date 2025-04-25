@@ -29,21 +29,21 @@ export default function HomePage() {
                                         <h4 className="card-title text-nowrap">{travel.destination}</h4>
                                         <p className="card-text">
                                             <span className="fw-bold">
-                                                <i className="bi bi-airplane-fill departure" ></i>
+                                                <i className="bi bi-airplane-fill departure"> </i>
                                             </span>
                                             {new Date(travel.start_trip).toLocaleDateString()}
 
                                             <br />
 
                                             <span className="fw-bold">
-                                                <i id="departure_icon" className="bi bi-airplane-fill" ></i>
+                                                <i id="departure_icon" className="bi bi-airplane-fill"> </i>
                                             </span>
                                             {new Date(travel.end_trip).toLocaleDateString()}
 
                                             <br />
 
                                             <span className="fw-bold">
-                                                <i id="return_icon" class="bi bi-person-fill"></i>
+                                                <i id="return_icon" class="bi bi-person-fill"> </i>
                                             </span>
                                             {travel.partecipants.length}
                                         </p>

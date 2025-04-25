@@ -91,12 +91,12 @@ main {
   }
 }
 
-.departure {
-  transform: rotate(60deg);
+#departure_icon {
+  transform: rotate(60deg) !important;
 }
 
-.return {
-  transform: rotate(300deg);
+#return_icon {
+  transform: rotate(300deg) !important;
 }
 
 /* #endregion HomePage */
