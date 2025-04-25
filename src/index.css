@@ -49,6 +49,16 @@ main {
 }
 
 /* #region HomePage */
+#badge_handler {
+  position: relative;
+
+  .badge {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+  }
+}
+
 .card {
   img {
     width: 100%;
@@ -79,6 +89,14 @@ main {
   &:hover {
     background-color: rgba(89, 89, 89, 0.75);
   }
+}
+
+.departure {
+  transform: rotate(60deg);
+}
+
+.return {
+  transform: rotate(300deg);
 }
 
 /* #endregion HomePage */

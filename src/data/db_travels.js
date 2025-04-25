@@ -32,7 +32,7 @@ const travels = [
     note: "Visit historical sites",
     image: "/imgs/roma.jpg",
     partecipants: [
-      { id: 16, name: "Paul", surname: "Walker", fiscal_code: "WLKPL16P16P016P", email: "paul.walker@example.com", phone: "6789009876" },
+      /*  { id: 16, name: "Paul", surname: "Walker", fiscal_code: "WLKPL16P16P016P", email: "paul.walker@example.com", phone: "6789009876" }, */
       { id: 17, name: "Quinn", surname: "Evans", fiscal_code: "EVNQNN17Q17Q017Q", email: "quinn.evans@example.com", phone: "7890109876" },
       { id: 18, name: "Rachel", surname: "Clark", fiscal_code: "CLRRCH18R18R018R", email: "rachel.clark@example.com", phone: "8901209876" },
       { id: 19, name: "Steve", surname: "Hall", fiscal_code: "HLLSTV19S19S019S", email: "steve.hall@example.com", phone: "9012309876" },
@@ -298,7 +298,7 @@ const travels = [
       { id: 177, name: "Anna", surname: "Young", fiscal_code: "YNGANN177A177A177A", email: "anna.young@example.com", phone: "7890123457" },
       { id: 178, name: "Brian", surname: "Zimmerman", fiscal_code: "ZMRBRN178B178B178B", email: "brian.zimmerman@example.com", phone: "8901234568" },
       { id: 179, name: "Clara", surname: "Anderson", fiscal_code: "ANDCLR179C179C179C", email: "clara.anderson@example.com", phone: "9012345679" },
-      { id: 180, name: "David", surname: "Bishop", fiscal_code: "BSPDVD180D180D180D", email: "david.bishop@example.com", phone: "0123456782" }
+      /* { id: 180, name: "David", surname: "Bishop", fiscal_code: "BSPDVD180D180D180D", email: "david.bishop@example.com", phone: "0123456782" } */
     ]
   }
 ]
