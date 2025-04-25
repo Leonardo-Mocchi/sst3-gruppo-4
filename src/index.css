@@ -5,20 +5,29 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 :root {
   --color-primary: #ffc107;
-  --color-secondary: #343a40; 
+  --color-secondary: #343a40;
   --header-height: 4rem;
   --footer-height: 2rem;
 }
 
+::-webkit-scrollbar {
+  display: none;
+}
+
+
+
 body {
   min-width: 300px;
+  overflow-y: scroll;
 
   main {
-    min-height: calc(100vh - );
+    min-height: calc(100vh - 200px);
   }
 }
 
@@ -29,8 +38,7 @@ header {
   }
 }
 
-footer{
-}
+footer {}
 
 .container {
 

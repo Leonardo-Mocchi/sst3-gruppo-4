@@ -108,11 +108,11 @@ export default function SingleTravel() {
               >
                 <div className="accordion-body ">
                   <p className="card-text">
-                    <i className="bi bi-envelope me-2"></i> <span className='fw-semibold'>Email:</span> {partecipant.email}</p>
+                    <i className="bi bi-envelope me-2"></i> <span className='fw-semibold'></span> {partecipant.email}</p>
                   <p className="card-text">
-                    <i className="bi bi-telephone me-2"></i> <span className='fw-semibold'>Telefono:</span> {partecipant.phone}</p>
+                    <i className="bi bi-telephone me-2"></i> <span className='fw-semibold'></span> {partecipant.phone}</p>
                   <p className='card-text'>
-                    <i className="bi bi-card-text me-2"></i> <span className='fw-semibold'>Codice Fiscale:</span> {partecipant.fiscal_code}</p>
+                    <i className="bi bi-card-text me-2"></i> <span className='fw-semibold'></span> {partecipant.fiscal_code}</p>
                 </div>
               </div>
             </div>
