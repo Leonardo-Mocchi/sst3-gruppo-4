@@ -67,7 +67,6 @@ main {
       opacity: 0.8;
     }
   }
-
 }
 
 .nav-link {
@@ -85,20 +84,20 @@ main {
 /* #endregion HomePage */
 
 /* #region SingleTravel */
-/* Colori dell'accordion */
-div.accordion .accordion-button {
-  color: #212529;
-  background-color: #f8f9fa;
-  border-color: #dee2e6;
+div {
+  .accordion {
+    .accordion-button {
+      color: #212529;
+      background-color: #f8f9fa;
+      border-color: #dee2e6;
+    }
+  }
 }
 
 div.accordion .accordion-button:visited {
   color: #212529;
-  /* Mantiene il colore del testo */
   background-color: #f8f9fa;
-  /* Mantiene il colore di sfondo */
   border-color: #dee2e6;
-  /* Mantiene il colore del bordo */
 }
 
 input:focus {
