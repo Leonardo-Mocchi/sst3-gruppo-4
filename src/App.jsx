@@ -11,9 +11,9 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route Component={DefaultLayout}>
-            <Route path="/" Component={HomePage} />
-            <Route path="/:id" Component={SingleTravel} />
-            <Route path="*" Component={NotFoundPage} />
+            <Route path="/" element={<HomePage />} />
+            <Route path="/:id" element={<SingleTravel />} />
+            <Route path="*" element={<NotFoundPage />} />
           </Route>
         </Routes>
       </BrowserRouter>
