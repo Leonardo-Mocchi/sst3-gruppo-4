@@ -25,11 +25,11 @@ export default function SingleTravel() {
 
   return (
     <>
-      <div className="container">
+      <main className="container">
 
         {/*precedente posizione del bottone di ritorno*/}
 
-        <div className="d-flex align-items-center my-4 justify-content-center">
+        <div className="d-flex align-items-center my-4 m-auto justify-content-start" style={{ maxWidth: "500px" }}>
           <img
             src={travel.image}
             alt={travel.destination}
@@ -68,18 +68,21 @@ export default function SingleTravel() {
 
 
         {/* Search Input */}
-        <div className="mb-3 d-flex align-items-center justify-content-center">
-          <input
-            type="text"
-            className="form-control rounded-end-0"
-            style={{ maxWidth: "300px" }}
-            placeholder="Cerca partecipante..."
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-          />
-          <button className="btn btn-warning rounded-start-0" onClick={handleSearch}>
-            <i className="bi bi-search"></i>
-          </button>
+        <div className="mb-3 d-flex align-items-center m-auto justify-content-between" style={{ maxWidth: "500px" }}>
+          <div style={{ width: "80%" }}>
+            <input
+              type="text"
+              className="form-control"
+              placeholder="Cerca partecipante..."
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+            />
+          </div>
+          <div style={{ width: "15%" }}>
+            <button className="btn btn-warning px-0 d-flex justify-content-center align-items-center" onClick={handleSearch} style={{ width: "100%" }}>
+              <i className="bi bi-search"></i>
+            </button>
+          </div>
         </div>
 
         <div className="accordion mb-5 mx-auto" id="accordionPanelsStayOpenExample"
@@ -123,7 +126,7 @@ export default function SingleTravel() {
 
           </div>
         </div>
-      </div>
+      </main>
     </>
   );
 }
