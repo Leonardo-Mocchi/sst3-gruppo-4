@@ -45,6 +45,9 @@ export default function SingleTravel() {
             <p className="mb-0">
               Dal <strong>{new Date(travel.start_trip).toLocaleDateString()} </strong> al <strong>{new Date(travel.end_trip).toLocaleDateString()}</strong>
             </p>
+            <p className='text-muted'>
+              {travel.notes?.length > 0 && `Note: ${travel.notes}`}
+            </p>
           </div>
         </div>
 

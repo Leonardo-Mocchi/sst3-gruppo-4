@@ -91,14 +91,6 @@ main {
   }
 }
 
-#departure_icon {
-  transform: rotate(60deg) !important;
-}
-
-#return_icon {
-  transform: rotate(300deg) !important;
-}
-
 /* #endregion HomePage */
 
 /* #region SingleTravel */
