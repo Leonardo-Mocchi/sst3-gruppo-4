@@ -1,5 +1,6 @@
 import { useState } from "react";
-import travelsData from "../data/db_travels"; import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
+import travelsData from "../data/db_travels";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlaneDeparture, faPlaneArrival, faUser } from '@fortawesome/free-solid-svg-icons';
 
@@ -14,7 +15,7 @@ export default function HomePage() {
             destination: "Venice",
             start_trip: "2025-01-10",
             end_trip: "2025-01-15",
-            note: "Explore the canals",
+            note: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem similique amet reprehenderit dolor! Nesciunt sit omnis tempore alias ex aperiam ipsam blanditiis ea repudiandae saepe culpa quasi vitae, excepturi voluptas?",
             image: "/imgs/venice.jpg",
             partecipants: [
                 { id: 181, name: "John", surname: "Doe", fiscal_code: "DOEJHN181A181A181A", email: "john.doe@example.com", phone: "1234567890" },
