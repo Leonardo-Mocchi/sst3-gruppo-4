@@ -1,28 +1,36 @@
-import travels from "../data/db_travels"
-import { Link } from "react-router-dom";
+import { useState } from "react";
+import travelsData from "../data/db_travels"; import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlaneDeparture, faPlaneArrival, faUser } from '@fortawesome/free-solid-svg-icons';
 
-// Add a new travel object
-const newTravel = {
-    id: travels.length + 1,
-    destination: "Venice",
-    start_trip: "2025-01-10",
-    end_trip: "2025-01-15",
-    note: "Explore the canals",
-    image: "/imgs/venice.jpg",
-    partecipants: [
-        { id: 181, name: "John", surname: "Doe", fiscal_code: "DOEJHN181A181A181A", email: "john.doe@example.com", phone: "1234567890" },
-        { id: 182, name: "Jane", surname: "Smith", fiscal_code: "SMTJNE182B182B182B", email: "jane.smith@example.com", phone: "2345678901" },
-    ],
-};
-
-// Push the new travel object into the array
-travels.push(newTravel);
-
 export default function HomePage() {
+    // Add a new travel object
+    const [travels, setTravels] = useState(travelsData);
+
+    // !!!!!!!!!!!! test function !!!!!!!!!!!!
+    const pushIt = () => {
+        const newTravel = {
+            id: travels.length + 1,
+            destination: "Venice",
+            start_trip: "2025-01-10",
+            end_trip: "2025-01-15",
+            note: "Explore the canals",
+            image: "/imgs/venice.jpg",
+            partecipants: [
+                { id: 181, name: "John", surname: "Doe", fiscal_code: "DOEJHN181A181A181A", email: "john.doe@example.com", phone: "1234567890" },
+                { id: 182, name: "Jane", surname: "Smith", fiscal_code: "SMTJNE182B182B182B", email: "jane.smith@example.com", phone: "2345678901" },
+            ],
+        };
+
+        // Update the state with the new travel
+        setTravels((prevTravels) => [...prevTravels, newTravel]);
+    };
+
     return (
         <main className="container mt-4">
+
+            <button type="button" className="btn btn-info" onClick={pushIt}>Push new travel test</button>
+
             <h1>Bentornato!</h1>
 
             <div className="mt-2 mb-4">
@@ -118,10 +126,9 @@ export default function HomePage() {
                 <hr />
 
                 <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-3">
+                    {/* card */}
                     {travels.map((travel) => (
                         <div className="col" key={travel.id}>
-
-                            {/* card */}
                             <Link to={`/${travel.id}`} className="text-decoration-none text-dark">
                                 <div className="card" >
                                     <div id="badge_handler">
