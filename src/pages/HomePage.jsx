@@ -9,26 +9,34 @@ export default function HomePage() {
             <div className="mt-2 mb-4">
                 <h3 className="mb-3">I nostri viaggi in corso</h3>
 
-                <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
+                <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-2">
                     {travels.map((travel) => (
                         <div className="col" key={travel.id}>
+
                             <Link to={`/${travel.id}`} className="text-decoration-none text-dark">
                                 <div className="card" >
                                     <img className="card-img-top" src={travel.image} alt="Title" />
                                     <div className="card-body">
                                         <h4 className="card-title">{travel.destination}</h4>
                                         <p className="card-text">
-                                            <span className="fw-bold">Departure:</span> {new Date(travel.start_trip).toLocaleDateString()}
+                                            <span className="fw-bold">Partenza:</span> {new Date(travel.start_trip).toLocaleDateString()}
+
                                             <br />
-                                            <span className="fw-bold">Participants:</span> {travel.partecipants.length}
+
+                                            <span className="fw-bold">Participanti:</span> {travel.partecipants.length == 15 ? (
+                                                <span>{travel.partecipants.length} <i className="bi bi-check-square-fill text-success" ></i> COMPLETO</span>
+                                            ) : (
+                                                <span>{travel.partecipants.length}</span>
+                                            )}
                                         </p>
                                     </div>
                                 </div>
                             </Link>
+
                         </div>
                     ))}
                 </div>
-            </div>
-        </main>
+            </div >
+        </main >
     );
 }

@@ -1,7 +1,7 @@
 const travels = [
   {
     id: 1,
-    destination: "Paris",
+    destination: "Parigi",
     start_trip: "2023-10-01",
     end_trip: "2023-10-05",
     note: null,
@@ -26,7 +26,7 @@ const travels = [
   },
   {
     id: 2,
-    destination: "Rome",
+    destination: "Roma",
     start_trip: "2023-11-10",
     end_trip: "2023-11-15",
     note: "Visit historical sites",
@@ -128,7 +128,7 @@ const travels = [
   },
   {
     id: 6,
-    destination: "Berlin",
+    destination: "Berlino",
     start_trip: "2024-06-01",
     end_trip: "2024-06-07",
     note: "Explore museums",
@@ -153,7 +153,7 @@ const travels = [
   },
   {
     id: 7,
-    destination: "Barcelona",
+    destination: "Barcellona",
     start_trip: "2024-07-15",
     end_trip: "2024-07-20",
     note: "Enjoy the architecture",
@@ -178,7 +178,7 @@ const travels = [
   },
   {
     id: 8,
-    destination: "London",
+    destination: "Londra",
     start_trip: "2024-08-10",
     end_trip: "2024-08-15",
     note: "Explore the city's landmarks",
@@ -228,7 +228,7 @@ const travels = [
   },
   {
     id: 10,
-    destination: "Cape Town",
+    destination: "Città del Capo",
     start_trip: "2024-10-20",
     end_trip: "2024-10-30",
     note: "Discover nature and wildlife",
@@ -278,7 +278,7 @@ const travels = [
   },
   {
     id: 12,
-    destination: "Prague",
+    destination: "Praga",
     start_trip: "2024-12-05",
     end_trip: "2024-12-10",
     note: "Visit the Christmas markets",
