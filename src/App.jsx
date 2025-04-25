@@ -10,9 +10,10 @@ function App() {
     <>
       <BrowserRouter>
         <Routes>
-          <Route Component={DefaultLayout}>
+          <Route element={<DefaultLayout />}>
             <Route path="/" element={<HomePage />} />
             <Route path="/:id" element={<SingleTravel />} />
+            <Route path="/not-found" element={<NotFoundPage />} />
             <Route path="*" element={<NotFoundPage />} />
           </Route>
         </Routes>

@@ -1,17 +1,24 @@
-import { useState } from 'react'
-import { Link, useParams } from "react-router-dom";
-import { useNavigate } from 'react-router-dom';
+import { useState, useEffect } from 'react'
+import { Link, useParams, useNavigate } from "react-router-dom";
 import travels from "../data/db_travels";
 
 export default function SingleTravel() {
   const { id } = useParams();
+  const navigate = useNavigate();
   const travel = travels.find((travel) => travel.id === Number(id));
-  const [searchTerm, setSearchTerm] = useState(""); // Input value
-  const [filteredParticipants, setFilteredParticipants] = useState(travel.partecipants); // Filtered participants
 
-  /* !!!!!!!!!!!!!! 404 !!!!!!!!!!!!!!!!!!! */
-  const navigate = useNavigate()
-  /* !!!!!!!!!!!!!! 404 !!!!!!!!!!!!!!!!!!! */
+  useEffect(() => {
+    if (!travel) {
+      navigate('/not-found', { replace: true });
+    }
+  }, [travel, navigate]);
+
+  if (!travel) {
+    return null;
+  }
+
+  const [searchTerm, setSearchTerm] = useState(""); // Input value
+  const [filteredParticipants, setFilteredParticipants] = useState(travel.partecipants); //Filtered partecipants
 
   // Function to handle search on button click
   const handleSearch = () => {
@@ -26,9 +33,6 @@ export default function SingleTravel() {
   return (
     <>
       <main className="container">
-
-        {/*precedente posizione del bottone di ritorno*/}
-
         <div className="d-flex align-items-center my-4 m-auto justify-content-start" style={{ maxWidth: "500px" }}>
           <img
             src={travel.image}
@@ -44,7 +48,8 @@ export default function SingleTravel() {
           </div>
         </div>
 
-        {/*<div className="row d-flex py-4">
+        {/*
+        <div className="row d-flex py-4">
           <div className="col-12 col-md-8">
             <h2>Dettagli viaggio</h2>
             <div className="card p-3">
@@ -65,11 +70,9 @@ export default function SingleTravel() {
         <hr />
         */}
 
-
-
         {/* Search Input */}
         <div className="mb-3 d-flex align-items-center m-auto justify-content-between" style={{ maxWidth: "500px" }}>
-          <div style={{ width: "80%" }}>
+          <div style={{ width: "85%" }}>
             <input
               type="text"
               className="form-control"
@@ -78,7 +81,7 @@ export default function SingleTravel() {
               onChange={(e) => setSearchTerm(e.target.value)}
             />
           </div>
-          <div style={{ width: "15%" }}>
+          <div style={{ width: "10%" }}>
             <button className="btn btn-warning px-0 d-flex justify-content-center align-items-center" onClick={handleSearch} style={{ width: "100%" }}>
               <i className="bi bi-search"></i>
             </button>
@@ -126,7 +129,6 @@ export default function SingleTravel() {
             <Link to={"/"} className='text-decoration-none text-dark'>
               <button className='btn btn-outline-dark mt-4'> <i className="bi bi-arrow-left"> </i> Torna alla Home </button>
             </Link>
-
           </div>
         </div>
       </main>
