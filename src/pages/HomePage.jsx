@@ -9,20 +9,13 @@ export default function HomePage() {
 
     return (
         <main className="container mt-4">
-
-
             <h1>Bentornato!</h1>
-
             <div className="mt-2 mb-4">
-
-
                 <div>
-
                     {/* add new travel form */}
                     <Popup isOpen={showForm} onClose={() => setShowForm(false)}>
                         <AddTravelForm handleSubmit={handleSubmit} />
                     </Popup>
-
                 </div>
 
                 <hr />
@@ -32,17 +25,12 @@ export default function HomePage() {
 
                     {/* create travel button to display the form */}
                     <button
-                        className="btn"
-                        style={{ padding: "0.25rem 1rem", backgroundColor: "var(--color-primary)" }}
+                        className="btn d-flex align-items-center justify-content-center custom-primary-btn"
                         type="button"
                         onClick={() => setShowForm(!showForm)}
                     >
-
-                        <span>
-                            <i className="bi bi-plus-lg" style={{ marginRight: "5px" }}></i>
-                            Aggiungi Viaggio
-                        </span>
-
+                        <i className="bi bi-plus-lg me-2"></i>
+                        <span>Aggiungi Viaggio</span>
                     </button>
                 </div>
 

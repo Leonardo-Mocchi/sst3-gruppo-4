@@ -83,17 +83,17 @@ export default function AddPartecipantForm({ handleSubmitPartecipant }) {
 
         <div className="col-12">
           <button
-            className="btn btn-primary d-flex justify-content-center align-items-center"
+            className="btn d-flex align-items-center justify-content-center custom-primary-btn"
             aria-label="Aggiungi il partecipante all'elenco premendo questo tasto"
             type="submit"
             style={{ width: "100%" }}
           >
 
             <img
-              src="/imgs/logoipsum-custom-logo(1).svg"
+              src="/imgs/logoipsum-custom-logo(1)-blue.svg"
               alt="logo"
               aria-label="Pubblica un nuovo viaggio premendo questo tasto"
-              style={{ height: "30px", marginRight: "10px" }}
+              style={{ height: "30px", marginRight: "8px" }}
             />
             <span>Aggiungi partecipante</span>
           </button>

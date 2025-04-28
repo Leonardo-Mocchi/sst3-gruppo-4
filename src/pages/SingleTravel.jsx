@@ -4,6 +4,9 @@ import { useGlobalContext } from "../context/GlobalContext";
 import AddPartecipantForm from '../components/AddPartecipantForm';
 import Popup from '../components/Popup';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUser } from '@fortawesome/free-solid-svg-icons';
+
 export default function SingleTravel() {
   const { travels, showForm, setShowForm, handleSubmitPartecipant } = useGlobalContext();
   const { id } = useParams();
@@ -55,23 +58,21 @@ export default function SingleTravel() {
             className="rounded shadow"
             style={{ width: "100px", height: "100px", objectFit: "cover", marginRight: "15px" }}
           />
-          <div className='d-flex align-items-center justify-content-between w-100'>
-            <div>
+          <div className=' w-100'>
+            <div className='d-flex align-items-center justify-content-between'>
               <h2>
                 {travel.destination}
               </h2>
-              <p>
-                Dal <strong>{new Date(travel.start_trip).toLocaleDateString()} </strong> al <strong>{new Date(travel.end_trip).toLocaleDateString()}</strong>
+              <p className={`mb-0 ${travel.partecipants?.length === 15 ? "text-success" : ""}`}>
+                <FontAwesomeIcon icon={faUser} /> <strong>{travel.partecipants.length}</strong>
               </p>
             </div>
-            <div>
-              <p>
-                Numero Partecipanti: <strong>{travel.partecipants.length}</strong>
-              </p>
-              <p className='text-muted'>
-                {travel.notes?.length > 0 && `Note: ${travel.notes}`}
-              </p>
-            </div>
+            <p className="mb-0">
+              Dal <strong>{new Date(travel.start_trip).toLocaleDateString()} </strong> al <strong>{new Date(travel.end_trip).toLocaleDateString()}</strong>
+            </p>
+            <p className='text-muted'>
+              {travel.notes?.length > 0 && `Note: ${travel.notes}`}
+            </p>
           </div>
 
         </div>
