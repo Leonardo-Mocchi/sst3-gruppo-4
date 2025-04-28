@@ -46,7 +46,13 @@ header {
 main {
   min-height: calc(100vh - 206.358px);
   flex: 1;
+}
 
+footer {
+  height: 70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 /* #region HomePage */

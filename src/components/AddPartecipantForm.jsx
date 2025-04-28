@@ -28,7 +28,7 @@ export default function AddPartecipantForm({ handleSubmitPartecipant }) {
           />
         </div>
 
-        <div className="col-6 col-md-3">
+        <div className="col-md-6">
           <label htmlFor="email" className="form-label">Email</label>
           <input
             type="text"
@@ -39,7 +39,7 @@ export default function AddPartecipantForm({ handleSubmitPartecipant }) {
           />
         </div>
 
-        <div className="col-6 col-md-3">
+        <div className="col-md-6">
           <label htmlFor="phone" className="form-label">Telefono</label>
           <input
             type="number"
@@ -51,13 +51,14 @@ export default function AddPartecipantForm({ handleSubmitPartecipant }) {
         </div>
 
         <div className="col-12">
-          <label htmlFor="note" className="form-label">Note</label>
-          <textarea
+          <label htmlFor="fiscal_code" className="form-label">Codice fiscale</label>
+          <input
+            type="text"
             className="form-control"
-            name="note" 
-            placeholder="Annotazioni personali"
+            name="fiscal_code" 
+            placeholder="Inserisci il tuo codice fiscale"
             rows="2"
-          ></textarea>
+          ></input>
         </div>
 
         <div className="col-12">

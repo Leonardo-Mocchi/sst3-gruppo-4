@@ -35,27 +35,39 @@ const GlobalProvider = ({ children }) => {
   const handleSubmitPartecipant = (e, travelId) => {
     e.preventDefault();
 
+    const numericTravelId = Number(travelId);
+
     const formData = new FormData(e.target);
     const newPartecipant = {
       id: Date.now(),
       name: capitalizeFirstLetter(formData.get("name")),
       surname: capitalizeFirstLetter(formData.get("surname")),
-      email: formData.get("email"),
-      phone: formData.get("phone"),
-      notes: formData.get("note"),
+      email: formData.get("email") || "",
+      phone: formData.get("phone") || "",
+      fiscal_code: formData.get("fiscal_code") || "",
+      notes: formData.get("note") || "",
     };
 
-    console.log("Adding participant to travel ID:", travelId);
+    console.log("Adding participant to travel ID:", numericTravelId);
     console.log("New participant:", newPartecipant);
 
-    setTravels((prevTravels) => {
-      return prevTravels.map((travel) => {
-        if (travel.id === travelId) {
-          console.log("Updating travel:", travel);
-          return {
+    const travelExists = travels.some(travel => travel.id === numericTravelId);
+    
+    if (!travelExists) {
+      console.error(`Travel with ID ${numericTravelId} not found!`);
+      return;
+    }
+
+    setTravels(prevTravels => {
+      return prevTravels.map(travel => {
+        if (travel.id === numericTravelId) {
+          console.log("Found travel to update:", travel);
+          const updatedTravel = {
             ...travel,
-            partecipants: [...travel.partecipants, newPartecipant],
+            partecipants: [...travel.partecipants, newPartecipant]
           };
+          console.log("Updated travel:", updatedTravel);
+          return updatedTravel;
         }
         return travel;
       });
@@ -63,7 +75,6 @@ const GlobalProvider = ({ children }) => {
 
     e.target.reset();
   };
-
 
   return (
     <GlobalContext.Provider value={{ travels, setTravels, showForm, setShowForm, handleSubmit, handleSubmitPartecipant }}>
@@ -77,4 +88,3 @@ function useGlobalContext() {
 }
 
 export { GlobalProvider, useGlobalContext }
-

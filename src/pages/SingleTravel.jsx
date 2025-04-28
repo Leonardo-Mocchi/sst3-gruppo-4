@@ -6,8 +6,12 @@ import AddPartecipantForm from '../components/AddPartecipantForm';
 export default function SingleTravel() {
   const { travels, showForm, setShowForm, handleSubmitPartecipant } = useGlobalContext();
   const { id } = useParams();
+  const travelId = Number(id);
   const navigate = useNavigate();
-  const travel = travels.find((travel) => travel.id === Number(id));
+  const travel = travels.find((travel) => travel.id === travelId);
+
+  const [searchTerm, setSearchTerm] = useState("");
+  const [filteredParticipants, setFilteredParticipants] = useState([]);
 
   useEffect(() => {
     if (!travel) {
@@ -15,15 +19,23 @@ export default function SingleTravel() {
     }
   }, [travel, navigate]);
 
+  useEffect(() => {
+    if (travel) {
+      setFilteredParticipants(travel.partecipants);
+    }
+  }, [travel?.partecipants]);
+
   if (!travel) {
     return null;
   }
 
-  const [searchTerm, setSearchTerm] = useState(""); // Input value
-  const [filteredParticipants, setFilteredParticipants] = useState(travel.partecipants); //Filtered partecipants
-
   // Function to handle search on button click
   const handleSearch = () => {
+    if (searchTerm.trim() === "") {
+      setFilteredParticipants(travel.partecipants);
+      return;
+    }
+
     const filtered = travel.partecipants.filter((partecipant) =>
       `${partecipant.name} ${partecipant.surname}`
         .toLowerCase()
@@ -54,7 +66,7 @@ export default function SingleTravel() {
         </div>
 
 
-        {/* create travel button to display the form */}
+        {/* Create travel button to display the form */}
         <div className='text-center mb-4'>
           <button
             className={"btn " + (showForm ? " btn-danger" : " btn-primary")}
@@ -70,7 +82,7 @@ export default function SingleTravel() {
             ) : (
               <span>
                 <i className="bi bi-plus-lg" style={{ marginRight: "5px" }}></i>
-                Aggiungi Viaggio
+                Aggiungi Partecipante
               </span>
             )}
           </button>
@@ -78,13 +90,13 @@ export default function SingleTravel() {
 
         {showForm && (
 
-          <AddPartecipantForm handleSubmitPartecipant={(e) => handleSubmitPartecipant(e, travel.id)} />)
+          <AddPartecipantForm handleSubmitPartecipant={(e) => handleSubmitPartecipant(e, travelId)} />)
 
         }
 
 
         {/* Search Input */}
-        <div className="mb-3 d-flex align-items-center m-auto justify-content-between" style={{ maxWidth: "500px" }}>
+        <div className="my-5 d-flex align-items-center m-auto justify-content-between" style={{ maxWidth: "500px" }}>
           <div style={{ width: "85%" }}>
             <input
               type="text"
@@ -101,6 +113,7 @@ export default function SingleTravel() {
           </div>
         </div>
 
+        {/* Partecipants list */}
         <div className="accordion mb-5 mx-auto" id="accordionPanelsStayOpenExample"
           style={{ maxWidth: "500px" }}>
           {filteredParticipants.map((partecipant) => (
@@ -138,8 +151,8 @@ export default function SingleTravel() {
             </div>
           ))}
 
-          {/*bottone di ritorno*/}
-          <div className="d-flex justify-content-center">
+          {/* Home button */}
+          <div className="d-flex justify-content-center mt-5">
             <Link to={"/"} className='text-decoration-none text-dark'>
               <button className='btn btn-outline-dark mt-4'> <i className="bi bi-arrow-left"> </i> Torna alla Home </button>
             </Link>
