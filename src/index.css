@@ -22,7 +22,8 @@
   display: none;
 }
 
-html, body {
+html,
+body {
   height: 100%;
   background-color: var(--color-secondary-bg);
 }
@@ -144,18 +145,52 @@ input:focus {
   background: rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
+  /* Align popup to the top */
+  padding-top: 200px;
+  /* Add some space from the top */
   z-index: 1000;
 }
 
 .popup-content {
   background: white;
-  padding: 2rem;
+  padding: 3rem;
   border-radius: 8px;
-  max-width: 500px;
-  width: 100%;
+  max-width: 800px;
+  width: 90%;
   position: relative;
 }
+
+.popup-close {
+  position: absolute;
+  border: none;
+  box-shadow: none;
+  background-color: transparent;
+  top: -100px;
+  right: 0;
+  color: white;
+  font-size: 5rem;
+  cursor: pointer;
+  z-index: 1001;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  width: 100px;
+
+  &:hover {
+    transform: rotate(90deg) scale(1.5);
+    transition: all .4s ease;
+    color: red;
+  }
+
+  &:active {
+    transform: rotate(-90deg) scale(1);
+    transition: all .1s ease-in;
+    color: rgba(255, 0, 0, 0.5);
+  }
+}
+
 /* #endregion SingleTravel */
 
 /* #endregion main */

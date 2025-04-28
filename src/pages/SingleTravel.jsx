@@ -78,7 +78,10 @@ export default function SingleTravel() {
 
 
 
-        <Popup isOpen={showForm} onClose={() => setShowForm(false)}>
+        <Popup
+          isOpen={showForm}
+          onClose={() => setShowForm(false)}
+        >
           <AddPartecipantForm handleSubmitPartecipant={(e) => handleSubmitPartecipant(e, travelId)} />
         </Popup>
 
