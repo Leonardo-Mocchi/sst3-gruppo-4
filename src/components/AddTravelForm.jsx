@@ -43,15 +43,7 @@ export default function AddTravelForm({ handleSubmit }) {
             rows="2"
           ></textarea>
         </div>
-        <div className="col-md-3">
-          <label htmlFor="partecipants" className="form-label">Partecipanti</label>
-          <input
-            type="text"
-            className="form-control"
-            name="partecipants" 
-            required
-          />
-        </div>
+
         <div className="col-12">
           <button className="btn btn-primary d-flex align-items-center" type="submit">
             <img

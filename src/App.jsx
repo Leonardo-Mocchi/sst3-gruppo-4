@@ -4,6 +4,7 @@ import HomePage from './pages/HomePage'
 import SingleTravel from './pages/SingleTravel'
 import NotFoundPage from './pages/NotFoundPage'
 
+
 function App() {
 
   return (

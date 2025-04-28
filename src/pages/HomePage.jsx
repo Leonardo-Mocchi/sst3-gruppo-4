@@ -1,33 +1,12 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import travelsData from "../data/db_travels";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlaneDeparture, faPlaneArrival, faUser } from '@fortawesome/free-solid-svg-icons';
 import AddTravelForm from "../components/AddTravelForm";
+import { useGlobalContext } from "../context/GlobalContext";
 
 export default function HomePage() {
-    // Add a new travel object
-    const [travels, setTravels] = useState(travelsData);
-    const [showForm, setShowForm] = useState(false);
-
-    const handleSubmit = (e) => {
-        e.preventDefault()
-
-        // Get the form data
-        const formData = new FormData(e.target);
-        const newTravel = {
-            id: travels.length + 1,
-            destination: formData.get("destination"),
-            start_trip: formData.get("start_trip"),
-            end_trip: formData.get("end_trip"),
-            note: formData.get("note"),
-            partecipants: formData.get("partecipants"),
-        };
-
-        // Update the state with the new travel
-        setTravels((prevTravels) => [...prevTravels, newTravel]);
-        e.target.reset(); // Reset the form after submission
-    }
+    const { travels, setTravels, showForm, setShowForm, handleSubmit } = useGlobalContext();
 
     return (
         <main className="container mt-4">
