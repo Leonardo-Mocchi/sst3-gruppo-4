@@ -5,8 +5,9 @@
 :root {
   --color-primary: #ffc107;
   --color-secondary: #343a40;
-  --header-height: 4rem;
-  --footer-height: 2rem;
+  --color-secondary-light: #6c6d6f;
+  --color-secondary-bg: #dfebf8;
+
 }
 
 * {
@@ -23,6 +24,7 @@
 
 html, body {
   height: 100%;
+  background-color: var(--color-secondary-bg);
 }
 
 .container {
