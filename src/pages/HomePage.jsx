@@ -10,29 +10,27 @@ export default function HomePage() {
     const [travels, setTravels] = useState(travelsData);
     const [showForm, setShowForm] = useState(false);
 
-    // !!!!!!!!!!!! test function !!!!!!!!!!!!
-    const pushIt = () => {
+    const handleSubmit = (e) => {
+        e.preventDefault()
+
+        // Get the form data
+        const formData = new FormData(e.target);
         const newTravel = {
             id: travels.length + 1,
-            destination: "Venice",
-            start_trip: "2025-01-10",
-            end_trip: "2025-01-15",
-            note: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem similique amet reprehenderit dolor! Nesciunt sit omnis tempore alias ex aperiam ipsam blanditiis ea repudiandae saepe culpa quasi vitae, excepturi voluptas?",
-            image: "/imgs/venice.jpg",
-            partecipants: [
-                { id: 181, name: "John", surname: "Doe", fiscal_code: "DOEJHN181A181A181A", email: "john.doe@example.com", phone: "1234567890" },
-                { id: 182, name: "Jane", surname: "Smith", fiscal_code: "SMTJNE182B182B182B", email: "jane.smith@example.com", phone: "2345678901" },
-            ],
+            destination: formData.get("destination"),
+            start_trip: formData.get("start_trip"),
+            end_trip: formData.get("end_trip"),
+            note: formData.get("note"),
+            partecipants: formData.get("partecipants"),
         };
 
         // Update the state with the new travel
         setTravels((prevTravels) => [...prevTravels, newTravel]);
-    };
+        e.target.reset(); // Reset the form after submission
+    }
 
     return (
         <main className="container mt-4">
-
-            <button type="button" className="btn btn-info" onClick={pushIt}>Push new travel test</button>
 
             <h1>Bentornato!</h1>
 
@@ -66,7 +64,7 @@ export default function HomePage() {
                     {/* add new travel form */}
                     {showForm && (
 
-                        <AddTravelForm />
+                        <AddTravelForm handleSubmit={handleSubmit} />
                     )}
                 </div>
 
