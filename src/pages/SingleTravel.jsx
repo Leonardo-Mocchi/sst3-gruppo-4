@@ -105,6 +105,7 @@ export default function SingleTravel() {
         <div className="accordion mb-5 mx-auto" id="accordionPanelsStayOpenExample"
           style={{ maxWidth: "500px" }}>
           {filteredParticipants.map((partecipant) => (
+            
             <div className="accordion-item" key={partecipant.id}>
               <h2 className="accordion-header">
                 <button

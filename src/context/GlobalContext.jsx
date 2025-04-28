@@ -60,7 +60,7 @@ const handleSubmitPartecipant = (e) => {
 
 
 return (
-    <GlobalContext.Provider value={{ travels, setTravels, showForm, setShowForm, handleSubmit }}>
+    <GlobalContext.Provider value={{ travels, setTravels, showForm, setShowForm, handleSubmit, handleSubmitPartecipant }}>
       {children}
     </GlobalContext.Provider>
   )
