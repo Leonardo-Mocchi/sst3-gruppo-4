@@ -8,6 +8,10 @@ const GlobalProvider = ({ children }) => {
   const [travels, setTravels] = useState(travelsData);
   const [showForm, setShowForm] = useState(false);
 
+  function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  }
+
   const handleSubmit = (e) => {
     e.preventDefault()
 
@@ -15,12 +19,12 @@ const GlobalProvider = ({ children }) => {
     const formData = new FormData(e.target);
     const newTravel = {
         id: travels.length + 1,
-        destination: formData.get("destination"),
+        destination: capitalizeFirstLetter(formData.get("destination")),
         start_trip: formData.get("start_trip"),
         end_trip: formData.get("end_trip"),
         notes: formData.get("note"),
         partecipants: [],
-        image: "https://placehold.co/600x600?text=Nessuna+Immagine+Trovata"
+        image: `https://placehold.co/600x600?text=${capitalizeFirstLetter(formData.get("destination"))}`
     };
 
     // Update the state with the new travel
