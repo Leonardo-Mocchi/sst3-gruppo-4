@@ -52,27 +52,6 @@ export default function SingleTravel() {
           </div>
         </div>
 
-        {/*
-        <div className="row d-flex py-4">
-          <div className="col-12 col-md-8">
-            <h2>Dettagli viaggio</h2>
-            <div className="card p-3">
-              <div className="card-top">
-                <h1>{travel.destination}</h1>
-                <div className="card-body p-0">
-                  <p>
-                    Dal <strong>{new Date(travel.start_trip).toLocaleDateString()} </strong> al <strong>{new Date(travel.start_trip).toLocaleDateString()}</strong>
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="col-12 col-md-4">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae mollitia blanditiis atque, repellat officia pariatur eos, quidem esse illo voluptatem impedit dolores? Modi reiciendis ullam dolore ducimus quas beatae ea!
-          </div>
-        </div>
-        <hr />
-        */}
 
         {/* Search Input */}
         <div className="mb-3 d-flex align-items-center m-auto justify-content-between" style={{ maxWidth: "500px" }}>
