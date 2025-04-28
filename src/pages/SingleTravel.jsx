@@ -47,8 +47,8 @@ export default function SingleTravel() {
 
   return (
     <>
-      <main className="container">
-        <div className="d-flex align-items-center my-4 m-auto justify-content-start" style={{ maxWidth: "500px" }}>
+      <main className="container mt-5">
+        <div className="d-flex align-items-center my-4 m-auto justify-content-start">
           <img
             src={travel.image}
             alt={travel.destination}

@@ -17,7 +17,7 @@ export default function CardStructure({travel}) {
         </div>
         {/* card body */}
         <div className="card-body p-0 p-2">
-          <h4 className="card-title text-nowrap overflow-hidden">{travel.destination}</h4>
+          <h4 className="card-title text-nowrap overflow-hidden pb-1">{travel.destination}</h4>
           <div className="card-text">
             <div>
               <span className="fw-bold">
