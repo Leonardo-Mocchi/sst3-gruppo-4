@@ -30,6 +30,8 @@ const GlobalProvider = ({ children }) => {
     // Update the state with the new travel
     setTravels((prevTravels) => [...prevTravels, newTravel]);
     e.target.reset(); // Reset the form after submission
+
+    setShowForm(false); // Close the form after submission
   }
 
   const handleSubmitPartecipant = (e, travelId) => {

@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import AddTravelForm from "../components/AddTravelForm";
 import { useGlobalContext } from "../context/GlobalContext";
 import CardStructure from "../components/CardStructure";
+import Popup from "../components/Popup";
 
 export default function HomePage() {
     const { travels, setTravels, showForm, setShowForm, handleSubmit } = useGlobalContext();
@@ -18,30 +19,26 @@ export default function HomePage() {
 
                     {/* create travel button to display the form */}
                     <button
-                        className={showForm ? ("btn btn-danger") : ("btn btn-primary")}
+                        className="btn btn-primary"
                         style={{ padding: "0.25rem 1rem" }}
                         type="button"
                         onClick={() => setShowForm(!showForm)}
                     >
-                        {showForm ? (
-                            <span>
-                                <i className="bi bi-x-lg" style={{ marginRight: "5px" }}></i>
-                                Annulla
-                            </span>
-                        ) : (
+     
                             <span>
                                 <i className="bi bi-plus-lg" style={{ marginRight: "5px" }}></i>
                                 Aggiungi Viaggio
                             </span>
-                        )}
+
                     </button>
                 </div>
                 <div>
-                    {/* add new travel form */}
-                    {showForm && (
 
+                    {/* add new travel form */}
+                    <Popup isOpen={showForm} onClose={() => setShowForm(false)}>
                         <AddTravelForm handleSubmit={handleSubmit} />
-                    )}
+                    </Popup>
+        
                 </div>
 
                 <hr />
