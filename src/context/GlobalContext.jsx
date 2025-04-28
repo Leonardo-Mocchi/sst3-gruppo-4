@@ -50,8 +50,6 @@ const GlobalProvider = ({ children }) => {
       notes: formData.get("note") || "",
     };
 
-    console.log("Adding participant to travel ID:", numericTravelId);
-    console.log("New participant:", newPartecipant);
 
     const travelExists = travels.some(travel => travel.id === numericTravelId);
     
@@ -76,6 +74,8 @@ const GlobalProvider = ({ children }) => {
     });
 
     e.target.reset();
+
+    setShowForm(false); // Close the form after submission
   };
 
   return (

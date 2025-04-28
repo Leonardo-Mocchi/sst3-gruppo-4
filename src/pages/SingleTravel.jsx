@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { Link, useParams, useNavigate } from "react-router-dom";
 import { useGlobalContext } from "../context/GlobalContext";
 import AddPartecipantForm from '../components/AddPartecipantForm';
+import Popup from '../components/Popup';
 
 export default function SingleTravel() {
   const { travels, showForm, setShowForm, handleSubmitPartecipant } = useGlobalContext();
@@ -69,30 +70,26 @@ export default function SingleTravel() {
         {/* Create travel button to display the form */}
         <div className='text-center mb-4'>
           <button
-            className={"btn " + (showForm ? " btn-danger" : " btn-primary")}
+            className="btn btn-primary"
             style={{ padding: "0.25rem 1rem" }}
             type="button"
             onClick={() => setShowForm(!showForm)}
           >
-            {showForm ? (
-              <span>
-                <i className="bi bi-x-lg" style={{ marginRight: "5px" }}></i>
-                Annulla
-              </span>
-            ) : (
+
               <span>
                 <i className="bi bi-plus-lg" style={{ marginRight: "5px" }}></i>
                 Aggiungi Partecipante
               </span>
-            )}
+
           </button>
         </div>
 
-        {showForm && (
+        <Popup isOpen={showForm} onClose={() => setShowForm(false)}>
+          <AddPartecipantForm handleSubmitPartecipant={(e) => handleSubmitPartecipant(e, travelId)} />
+        </Popup>
 
-          <AddPartecipantForm handleSubmitPartecipant={(e) => handleSubmitPartecipant(e, travelId)} />)
 
-        }
+
 
 
         {/* Search Input */}
