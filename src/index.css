@@ -21,9 +21,8 @@
   display: none;
 }
 
-body {
-  min-width: 300px;
-  overflow-y: scroll;
+html, body {
+  height: 100%;
 }
 
 .container {
@@ -46,6 +45,8 @@ header {
 /* #region main */
 main {
   min-height: calc(100vh - 206.358px);
+  flex: 1;
+
 }
 
 /* #region HomePage */
