@@ -55,36 +55,25 @@ export default function SingleTravel() {
             className="rounded shadow"
             style={{ width: "100px", height: "100px", objectFit: "cover", marginRight: "15px" }}
           />
-          <div>
-            <h2>
-              {travel.destination}
-            </h2>
-            <p>
-              Dal <strong>{new Date(travel.start_trip).toLocaleDateString()} </strong> al <strong>{new Date(travel.end_trip).toLocaleDateString()}</strong>
-            </p>
-            <p>
-            Numero Partecipanti: <strong>{travel.partecipants.length}</strong>
-            </p>
-            <p className='text-muted'>
-              {travel.notes?.length > 0 && `Note: ${travel.notes}`}
-            </p>
+          <div className='d-flex align-items-center justify-content-between w-100'>
+            <div>
+              <h2>
+                {travel.destination}
+              </h2>
+              <p>
+                Dal <strong>{new Date(travel.start_trip).toLocaleDateString()} </strong> al <strong>{new Date(travel.end_trip).toLocaleDateString()}</strong>
+              </p>
+            </div>
+            <div>
+              <p>
+                Numero Partecipanti: <strong>{travel.partecipants.length}</strong>
+              </p>
+              <p className='text-muted'>
+                {travel.notes?.length > 0 && `Note: ${travel.notes}`}
+              </p>
+            </div>
           </div>
-                  {/* Create travel button to display the form */}
-        <div className='ms-auto mb-auto'>
-          <button
-            className="btn" 
-            style={{ padding: "0.25rem 1rem", backgroundColor: "var(--color-primary)" }}
-            type="button"
-            onClick={() => setShowForm(!showForm)}
-          >
 
-              <span>
-                <i className="bi bi-plus-lg" style={{ marginRight: "5px" }}></i>
-                Nuovo Partecipante
-              </span>
-
-          </button>
-        </div>
         </div>
 
 
@@ -98,7 +87,7 @@ export default function SingleTravel() {
 
 
         {/* Search Input */}
-        <div className="my-4 d-flex align-items-center m-auto justify-content-between">
+        <div className="my-4 d-flex align-items-center justify-content-between">
           <div style={{ width: "85%" }}>
             <input
               type="text"
@@ -109,16 +98,34 @@ export default function SingleTravel() {
             />
           </div>
           <div style={{ width: "14%" }}>
-            <button className="btn btn-secondary px-0 d-flex justify-content-center align-items-center border-0" onClick={handleSearch} 
-            style={{ width: "100%", backgroundColor: "var(--color-secondary-light)" }}>
+            <button className="btn btn-secondary px-0 d-flex justify-content-center align-items-center border-0" onClick={handleSearch}
+              style={{ width: "100%", backgroundColor: "var(--color-secondary-light)" }}>
               <i className="bi bi-search"></i>
             </button>
           </div>
         </div>
 
         {/* Partecipants list */}
-        <div className="accordion mb-5 mx-auto" id="accordionPanelsStayOpenExample">
-          {filteredParticipants.map((partecipant) => (
+        <div className="accordion mx-auto" id="accordionPanelsStayOpenExample">
+          {/* Create travel button to display the form when partecipants are less than 15 */}
+          {filteredParticipants.length < 15 ? (
+            <div className='text-center mt-2 rounded-3'>
+              <button
+                className="btn text-secondary"
+                style={{ width: "100%", padding: "0.5rem 1rem", backgroundColor: "var(--color-secondary-bg)", border: "dashed 1px var(--color-secondary-light)" }}
+                type="button"
+                onClick={() => setShowForm(!showForm)}
+              >
+
+                <span>
+                  <i className="bi bi-plus-lg" style={{ marginRight: "5px" }}></i>
+                  Aggiungi Partecipante
+                </span>
+
+              </button>
+            </div>
+          ) : null}
+          {[...filteredParticipants].reverse().map((partecipant) => (
 
             <div className="accordion-item mt-2 rounded-3" key={partecipant.id}>
               <h2 className="accordion-header">
@@ -153,13 +160,16 @@ export default function SingleTravel() {
             </div>
           ))}
 
-          {/* Home button */}
-          <div className="d-flex justify-content-start mt-1">
-            <Link to={"/"} className='text-decoration-none text-dark'>
-              <button className='btn btn-outline-dark mt-4'> <i className="bi bi-arrow-left"> </i> Torna alla Home </button>
-            </Link>
-          </div>
         </div>
+
+
+        {/* Home button */}
+        <div className="d-flex justify-content-start mt-1">
+          <Link to={"/"} className='text-decoration-none text-dark'>
+            <button className='btn btn-outline-dark mt-4'> <i className="bi bi-arrow-left"> </i> Torna alla Home </button>
+          </Link>
+        </div>
+
       </main>
     </>
   );

@@ -10,41 +10,45 @@ export default function HomePage() {
     return (
         <main className="container mt-4">
 
+
             <h1>Bentornato!</h1>
 
             <div className="mt-2 mb-4">
 
-                <div className="d-flex justify-content-between align-items-baseline">
-                    <h3 className="mb-3">Viaggi in Corso</h3>
 
-                    {/* create travel button to display the form */}
-                    <button
-                        className="btn btn-primary"
-                        style={{ padding: "0.25rem 1rem" }}
-                        type="button"
-                        onClick={() => setShowForm(!showForm)}
-                    >
-     
-                            <span>
-                                <i className="bi bi-plus-lg" style={{ marginRight: "5px" }}></i>
-                                Aggiungi Viaggio
-                            </span>
-
-                    </button>
-                </div>
                 <div>
 
                     {/* add new travel form */}
                     <Popup isOpen={showForm} onClose={() => setShowForm(false)}>
                         <AddTravelForm handleSubmit={handleSubmit} />
                     </Popup>
-        
+
                 </div>
 
                 <hr />
 
+                <div className="d-flex justify-content-between align-items-baseline mt-4">
+                    <h3 className="mb-3">Viaggi in Corso</h3>
+
+                    {/* create travel button to display the form */}
+                    <button
+                        className="btn"
+                        style={{ padding: "0.25rem 1rem", backgroundColor: "var(--color-primary)" }}
+                        type="button"
+                        onClick={() => setShowForm(!showForm)}
+                    >
+
+                        <span>
+                            <i className="bi bi-plus-lg" style={{ marginRight: "5px" }}></i>
+                            Aggiungi Viaggio
+                        </span>
+
+                    </button>
+                </div>
+
                 {/* cards */}
-                <div className="row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-xl-3 row-cols-xxl-4 g-5 pt-3">
+                <div className="row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-xl-3 row-cols-xxl- g-5 pt-3">
+
                     {travels.map((travel) => (
                         <div className="col" key={travel.id}>
                             <Link to={`/${travel.id}`} className="text-decoration-none text-dark">
