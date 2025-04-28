@@ -32,6 +32,33 @@ const GlobalProvider = ({ children }) => {
     e.target.reset(); // Reset the form after submission
 }
 
+const handleSubmitPartecipant = (e) => {
+  e.preventDefault()
+
+  // Get the form data
+  const formData = new FormData(e.target);
+  const newPartecipant = {
+      id: travel.partecipants.length + 1,
+      name: capitalizeFirstLetter(formData.get("name")),
+      surname: capitalizeFirstLetter(formData.get("surname")),
+      email: formData.get("email"),
+      phone: formData.get("phone"),
+      notes: formData.get("note")
+  };
+
+  // Update the state with the new travel
+  setTravels((prevTravels) => {
+      return prevTravels.map((travel) => {
+          if (travel.id === travel.id) {
+              return { ...travel, partecipants: [...travel.partecipants, newPartecipant] };
+          }
+          return travel;
+      });
+  });
+  e.target.reset(); // Reset the form after submission
+}
+
+
 return (
     <GlobalContext.Provider value={{ travels, setTravels, showForm, setShowForm, handleSubmit }}>
       {children}

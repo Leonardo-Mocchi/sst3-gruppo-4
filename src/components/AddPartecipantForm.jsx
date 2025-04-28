@@ -1,57 +1,68 @@
-export default function AddPartecipantForm({ handleSubmit }) {
+export default function AddPartecipantForm({ handleSubmitPartecipant }) {
   return (
     <>
       <form
         className="row g-3 needs-validation"
         noValidate
-        onSubmit={handleSubmit} 
+        onSubmit={handleSubmitPartecipant} 
       >
         <div className="col-md-6">
-          <label htmlFor="destination" className="form-label">Destinazione</label>
+          <label htmlFor="name" className="form-label">Nome</label>
           <input
             type="text"
             className="form-control"
-            name="destination" 
-            placeholder="Meta"
+            name="name" 
+            placeholder="Inserisci il nome"
             required
           />
         </div>
-        <div className="col-6 col-md-3">
-          <label htmlFor="start_trip" className="form-label">Data di Partenza</label>
+
+        <div className="col-md-6">
+          <label htmlFor="surname" className="form-label">Cognome</label>
           <input
-            type="date"
+            type="text"
             className="form-control"
-            name="start_trip" 
+            name="surname" 
+            placeholder="Inserisci il cognome"
             required
           />
         </div>
+
         <div className="col-6 col-md-3">
-          <label htmlFor="end_trip" className="form-label">Data di Ritorno</label>
+          <label htmlFor="email" className="form-label">Email</label>
           <input
-            type="date"
+            type="text"
             className="form-control"
-            name="end_trip" 
+            name="email" 
+            placeholder="Inserisci l'email"
             required
           />
         </div>
+
+        <div className="col-6 col-md-3">
+          <label htmlFor="phone" className="form-label">Telefono</label>
+          <input
+            type="number"
+            className="form-control"
+            name="phone" 
+            placeholder="Inserisci il numero di telefono"
+            required
+          />
+        </div>
+
         <div className="col-12">
           <label htmlFor="note" className="form-label">Note</label>
           <textarea
             className="form-control"
             name="note" 
-            placeholder="Qualche appunto?"
+            placeholder="Annotazioni personali"
             rows="2"
           ></textarea>
         </div>
 
         <div className="col-12">
           <button className="btn btn-primary d-flex align-items-center" type="submit">
-            <img
-              src="/imgs/logoipsum-custom-logo(1).svg"
-              alt="logo"
-              style={{ height: "30px", marginRight: "10px" }}
-            />
-            <span>Crea Viaggio</span>
+            <span>Aggiungi partecipante</span>
           </button>
         </div>
       </form>
