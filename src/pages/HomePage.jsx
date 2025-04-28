@@ -16,7 +16,7 @@ export default function HomePage() {
             <div className="mt-2 mb-4">
 
                 <div className="d-flex justify-content-between align-items-baseline">
-                    <h3 className="mb-3">I nostri viaggi in corso</h3>
+                    <h3 className="mb-3">Viaggi in Corso</h3>
 
                     {/* create travel button to display the form */}
                     <button
@@ -50,14 +50,14 @@ export default function HomePage() {
                 <hr />
 
                 {/* cards */}
-                <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-3">
+                <div className="row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-xl-3 row-cols-xxl-4 g-5">
                     {travels.map((travel) => (
                         <div className="col" key={travel.id}>
                             <Link to={`/${travel.id}`} className="text-decoration-none text-dark">
                                 <div className="card" >
                                     <div id="badge_handler">
                                         <img className="card-img-top" src={travel.image} alt="Title" />
-                                        {travel.partecipants.length == 15 && (
+                                        {travel.partecipants?.length == 15 && (
                                             <span className="badge bg-success d-flex justify-content-start align-items-center" style={{ maxWidth: "130px" }}>
                                                 <i className="fs-5 bi bi-check"></i>
                                                 AL COMPLETO
@@ -66,7 +66,7 @@ export default function HomePage() {
                                     </div>
                                     {/* card body */}
                                     <div className="card-body p-0 p-2">
-                                        <h4 className="card-title text-nowrap">{travel.destination}</h4>
+                                        <h4 className="card-title text-nowrap overflow-hidden">{travel.destination}</h4>
                                         <div className="card-text">
                                             <div>
                                                 <span className="fw-bold">

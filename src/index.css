@@ -60,7 +60,7 @@ main {
 }
 
 .card {
-  box-shadow: 0 4px 8px 0 rgba(109, 109, 108, 0.541), 0 6px 20px 0 rgba(92, 92, 92, 0.473);
+  box-shadow: 0 4px 6px 0 rgba(177, 177, 177, 0.617), 0 0px 15px 0 rgba(185, 185, 185, 0.707);
   transition: transform 0.3s ease-in-out;
 
   img {
@@ -84,7 +84,7 @@ main {
 }
 
 .card:hover {
-  transform: scale(1.05);
+  transform: scale(1.03);
 }
 
 .nav-link {

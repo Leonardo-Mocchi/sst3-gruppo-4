@@ -18,7 +18,9 @@ const GlobalProvider = ({ children }) => {
         destination: formData.get("destination"),
         start_trip: formData.get("start_trip"),
         end_trip: formData.get("end_trip"),
-        note: formData.get("note"),
+        notes: formData.get("note"),
+        partecipants: [],
+        image: "https://placehold.co/600x600?text=Nessuna+Immagine+Trovata"
     };
 
     // Update the state with the new travel

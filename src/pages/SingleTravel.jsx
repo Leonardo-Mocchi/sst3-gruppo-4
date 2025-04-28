@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react'
 import { Link, useParams, useNavigate } from "react-router-dom";
-import travels from "../data/db_travels";
+import { useGlobalContext } from "../context/GlobalContext";
 
 export default function SingleTravel() {
+  const { travels } = useGlobalContext();
   const { id } = useParams();
   const navigate = useNavigate();
   const travel = travels.find((travel) => travel.id === Number(id));
