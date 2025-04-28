@@ -119,15 +119,15 @@ export default function HomePage() {
                             </div>
                         </div> */}
                         <div className="col-12">
-                            <button className="btn btn-primary" type="submit">Crea Viaggio</button>
+                            <button className="btn btn-primary d-flex align-items-center " type="submit"> <img src="/imgs/logoipsum-custom-logo(1).svg" alt="" style={{ height: "30px", marginRight: "10px" }} /> <span>Crea Viaggio</span></button>
                         </div>
                     </form>
                 </div>
 
                 <hr />
 
+                {/* cards */}
                 <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-3">
-                    {/* card */}
                     {travels.map((travel) => (
                         <div className="col" key={travel.id}>
                             <Link to={`/${travel.id}`} className="text-decoration-none text-dark">
