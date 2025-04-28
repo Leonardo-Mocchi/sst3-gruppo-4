@@ -57,7 +57,7 @@ export default function SingleTravel() {
         {/* create travel button to display the form */}
         <div className='text-center mb-4'>
           <button
-            className={"btn " + (showForm ? " btn-danger" : " btn-primary")} 
+            className={"btn " + (showForm ? " btn-danger" : " btn-primary")}
             style={{ padding: "0.25rem 1rem" }}
             type="button"
             onClick={() => setShowForm(!showForm)}
@@ -75,11 +75,10 @@ export default function SingleTravel() {
             )}
           </button>
         </div>
-        
+
         {showForm && (
 
-          <AddPartecipantForm handleSubmitPartecipant={handleSubmitPartecipant} />
-        ) 
+          <AddPartecipantForm handleSubmitPartecipant={(e) => handleSubmitPartecipant(e, travel.id)} />)
 
         }
 
@@ -105,7 +104,7 @@ export default function SingleTravel() {
         <div className="accordion mb-5 mx-auto" id="accordionPanelsStayOpenExample"
           style={{ maxWidth: "500px" }}>
           {filteredParticipants.map((partecipant) => (
-            
+
             <div className="accordion-item" key={partecipant.id}>
               <h2 className="accordion-header">
                 <button

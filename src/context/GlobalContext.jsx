@@ -18,48 +18,54 @@ const GlobalProvider = ({ children }) => {
     // Get the form data
     const formData = new FormData(e.target);
     const newTravel = {
-        id: travels.length + 1,
-        destination: capitalizeFirstLetter(formData.get("destination")),
-        start_trip: formData.get("start_trip"),
-        end_trip: formData.get("end_trip"),
-        notes: formData.get("note"),
-        partecipants: [],
-        image: `https://placehold.co/600x600?text=${capitalizeFirstLetter(formData.get("destination"))}`
+      id: travels.length + 1,
+      destination: capitalizeFirstLetter(formData.get("destination")),
+      start_trip: formData.get("start_trip"),
+      end_trip: formData.get("end_trip"),
+      notes: formData.get("note"),
+      partecipants: [],
+      image: `https://placehold.co/600x600?text=${capitalizeFirstLetter(formData.get("destination"))}`
     };
 
     // Update the state with the new travel
     setTravels((prevTravels) => [...prevTravels, newTravel]);
     e.target.reset(); // Reset the form after submission
-}
+  }
 
-const handleSubmitPartecipant = (e) => {
-  e.preventDefault()
+  const handleSubmitPartecipant = (e, travelId) => {
+    e.preventDefault();
 
-  // Get the form data
-  const formData = new FormData(e.target);
-  const newPartecipant = {
-      id: travel.partecipants.length + 1,
+    const formData = new FormData(e.target);
+    const newPartecipant = {
+      id: Date.now(),
       name: capitalizeFirstLetter(formData.get("name")),
       surname: capitalizeFirstLetter(formData.get("surname")),
       email: formData.get("email"),
       phone: formData.get("phone"),
-      notes: formData.get("note")
+      notes: formData.get("note"),
+    };
+
+    console.log("Adding participant to travel ID:", travelId);
+    console.log("New participant:", newPartecipant);
+
+    setTravels((prevTravels) => {
+      return prevTravels.map((travel) => {
+        if (travel.id === travelId) {
+          console.log("Updating travel:", travel);
+          return {
+            ...travel,
+            partecipants: [...travel.partecipants, newPartecipant],
+          };
+        }
+        return travel;
+      });
+    });
+
+    e.target.reset();
   };
 
-  // Update the state with the new travel
-  setTravels((prevTravels) => {
-      return prevTravels.map((travel) => {
-          if (travel.id === travel.id) {
-              return { ...travel, partecipants: [...travel.partecipants, newPartecipant] };
-          }
-          return travel;
-      });
-  });
-  e.target.reset(); // Reset the form after submission
-}
 
-
-return (
+  return (
     <GlobalContext.Provider value={{ travels, setTravels, showForm, setShowForm, handleSubmit, handleSubmitPartecipant }}>
       {children}
     </GlobalContext.Provider>
