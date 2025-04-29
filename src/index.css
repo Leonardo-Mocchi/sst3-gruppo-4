@@ -26,6 +26,7 @@ html,
 body {
   height: 100%;
   background-color: var(--color-secondary-bg);
+  min-width: 300px;
 }
 
 .container {
@@ -67,12 +68,10 @@ footer {
   border-radius: 8px;
   font-size: 1rem;
   transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 
   &:hover {
     background-color: #e0a800;
     transform: scale(1.05);
-    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
   }
 
   &:active {
@@ -144,15 +143,6 @@ div {
     }
   }
 }
-
-/* ???????????????????????????????????? */
-div.accordion .accordion-button:visited {
-  color: #212529;
-  background-color: #f8f9fa;
-  border-color: #dee2e6;
-}
-
-/* ???????????????????????????????????? */
 
 input:focus {
   box-shadow: none !important;

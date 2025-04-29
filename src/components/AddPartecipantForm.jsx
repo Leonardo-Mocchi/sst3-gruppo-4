@@ -22,9 +22,10 @@ export default function AddPartecipantForm({ handleSubmitPartecipant }) {
             aria-label="Inserisci il nome del partecipante"
             name="name"
             placeholder="Inserisci il nome"
+            pattern="[A-Za-z]{3,25}"
             required
           />
-          <div className="invalid-feedback">Il nome è obbligatorio.</div>
+          <div className="invalid-feedback">Il nome è obbligatorio (3-25 caratteri)</div>
         </div>
 
         <div className="col-md-6">
@@ -35,9 +36,10 @@ export default function AddPartecipantForm({ handleSubmitPartecipant }) {
             aria-label="Inserisci il cognome del partecipante"
             name="surname"
             placeholder="Inserisci il cognome"
+            pattern="[A-Za-z]{3,25}"
             required
           />
-          <div className="invalid-feedback">Il cognome è obbligatorio.</div>
+          <div className="invalid-feedback">Il cognome è obbligatorio (3-25 caratteri)</div>
         </div>
 
         <div className="col-md-6">
