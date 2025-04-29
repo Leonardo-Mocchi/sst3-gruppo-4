@@ -102,8 +102,8 @@ export default function SingleTravel() {
             />
           </div>
           <div style={{ width: "14%" }}>
-            <button className="btn btn-secondary px-0 d-flex justify-content-center align-items-center border-0" onClick={handleSearch}
-              style={{ width: "100%", backgroundColor: "var(--color-secondary-light)" }}>
+            <button className="btn custom-primary-btn px-0 d-flex justify-content-center align-items-center border-0" onClick={handleSearch}
+              style={{ width: "100%" }}>
               <i className="bi bi-search"></i>
             </button>
           </div>

@@ -6,8 +6,7 @@
   --color-primary: #ffc107;
   --color-secondary: #343a40;
   --color-secondary-light: #6c6d6f;
-  --color-secondary-bg: #dfebf8;
-
+  --color-secondary-bg: #ebf1f7;
 }
 
 * {
@@ -67,7 +66,7 @@ footer {
   border: none;
   border-radius: 8px;
   font-size: 1rem;
-  transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
 
   &:hover {
     background-color: #e0a800;
