@@ -35,7 +35,7 @@ export default function HomePage() {
                 </div>
 
                 {/* cards */}
-                <div className="row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-xl-3 row-cols-xxl- g-5 pt-3">
+                <div className="row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-xl-3 g-5 pt-3">
 
                     {travels.map((travel) => (
                         <div className="col" key={travel.id}>
