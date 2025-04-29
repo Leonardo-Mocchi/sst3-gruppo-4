@@ -43,7 +43,7 @@ export default function HomePage() {
                                 <CardStructure travel={travel} />
                             </Link>
                         </div>
-                    ))}
+                    )).reverse()}
                 </div>
             </div >
         </main >
