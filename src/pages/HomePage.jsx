@@ -30,7 +30,7 @@ export default function HomePage() {
                         onClick={() => setShowForm(!showForm)}
                     >
                         <i className="bi bi-plus-lg me-2"></i>
-                        <span>Aggiungi Viaggio</span>
+                        <span style={{ paddingBottom: "1px" }}>Aggiungi Viaggio</span>
                     </button>
                 </div>
 
